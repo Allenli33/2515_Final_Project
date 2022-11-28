@@ -70,14 +70,14 @@ class GameScreen(BaseScreen):
                 self.patrick.patrick_index)]
 
     def manage_enemies(self):
-        if random.randrange(0, 100) < 1:
+        if random.randrange(0, 75) < 1:
             if random.randint(0, 1) == 0:
-                enemy = Obstacle("./images/plankton/Plankton3.png", 6)
+                enemy = Obstacle("./images/plankton/Plankton3.png", 8)
                 self.obstacle_group.add(enemy)
             else:
-                enemy = Obstacle("./images/shell.png", 6, True)
+                enemy = Obstacle("./images/shell.png", 8, True)
                 self.obstacle_group.add(enemy)
-        if random.randrange(0, 100) < 1:
+        if random.randrange(0, 75) < 1:
             good = Obstacle("./images/patty.png", 10)
             self.patty.add(good)
         if pygame.sprite.spritecollide(self.patrick, self.obstacle_group, dokill=True):

@@ -10,7 +10,7 @@ class Obstacle(pygame.sprite.Sprite):
         self.rect = self.image.get_rect()
         self.shell = shell
         if self.shell == False:
-            self.rect.y = random.randint(10, 300)
+            self.rect.y = random.randint(10, 340)
         else:
             self.rect.y = 360
         self.rect.x = 805
