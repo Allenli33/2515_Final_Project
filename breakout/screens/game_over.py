@@ -15,8 +15,8 @@ class GameOverScreen(BaseScreen):
         self.button2 = TextBox(
             (200, 100), "Quit", color=(0, 255, 0), bgcolor=(255, 140, 70)
         )
-        self.button1.rect.topleft = (100, 100)
-        self.button2.rect.topleft = (500, 100)
+        self.button1.rect.topleft = (100, 300)
+        self.button2.rect.topleft = (500, 300)
         self.sprites.add(self.button1, self.button2)
 
     def draw(self):
