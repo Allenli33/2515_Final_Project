@@ -10,7 +10,7 @@ class GameOverScreen(BaseScreen):
         self.background = Background('./images/background4.png')
         self.sprites = pygame.sprite.Group()
         self.button1 = TextBox(
-            (200, 100), "Again", color=(255, 0, 0), bgcolor=(120, 120, 120)
+            (200, 100), "Restart", color=(255, 0, 0), bgcolor=(120, 120, 120)
         )
         self.button2 = TextBox(
             (200, 100), "Quit", color=(0, 255, 0), bgcolor=(255, 140, 70)
