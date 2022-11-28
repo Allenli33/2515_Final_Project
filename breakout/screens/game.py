@@ -51,8 +51,8 @@ class GameScreen(BaseScreen):
         self.window.blit(self.patrick_surf, self.patrick.rect)
         self.obstacle_group.draw(self.window)
         self.patty.draw(self.window)
-        self.window.blit(self.text_score, (600, 20))
-        self.window.blit(self.lives_score, (100, 20))
+        self.window.blit(self.text_score, (600, 10))
+        self.window.blit(self.lives_score, (100, 10))
 
     def manage_event(self, event):
         pass
