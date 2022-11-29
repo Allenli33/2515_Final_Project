@@ -7,18 +7,18 @@ from ..components import Background
 class WelcomeScreen(BaseScreen):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.background = Background('./images/background4.png')
+        self.background = Background('./images/background5.jpg')
         self.sprites = pygame.sprite.Group()
         self.button = TextBox(
-            (400, 100), "Press SPACE to start", color=(255, 255, 255), bgcolor=(0, 0, 0)
+            (300, 100), "Press SPACE to start", color=(0, 0, 0), bgcolor=(255, 255, 255)
         )
         self.sprites.add(self.button)
 
     def draw(self):
         self.window.fill((255, 255, 255))
         self.window.blit(self.background.image_scaled, self.background.rect)
-        self.button.rect.x = 200
-        self.button.rect.y = 150
+        self.button.rect.x = 170
+        self.button.rect.y = 160
         self.sprites.draw(self.window)
 
     def update(self):
