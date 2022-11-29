@@ -39,8 +39,8 @@ class Patrick(pygame.sprite.Sprite):
             self.image = self.patrick_jump
         if self.rect.bottom >= 400:
             self.rect.bottom = 400
-        if self.rect.top <= -50:
-            self.rect.top = -50
+        if self.rect.top <= -10:
+            self.rect.top = -10
         else:
             self.patrick_index += 0.1
             if self.patrick_index >= len(self.patrick_walk):
