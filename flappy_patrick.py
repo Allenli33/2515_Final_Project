@@ -19,6 +19,7 @@ class Game:
             "game_over": GameOverScreen,
         }
 
+        score = None
         # Start the loop
         running = True
         current_screen = "welcome"
@@ -29,11 +30,16 @@ class Game:
                 raise RuntimeError(f"Screen {current_screen} not found!")
 
             # Create a new screen object, "connected" to the window
-            screen = screen_class(self.window)
+
+            if current_screen == "game_over":
+                screen = screen_class(self.window, score)
+            else:
+                screen = screen_class(self.window)
 
             # Run the screen
             screen.run()
-
+            if screen.score is not None:
+                score = screen.score
             # When the `run` method stops, we should have a `next_screen` setup
             if screen.next_screen is False:
                 running = False

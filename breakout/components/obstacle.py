@@ -3,6 +3,8 @@ import random
 
 
 class Obstacle(pygame.sprite.Sprite):
+    '''creating obstacle spirte class'''
+
     def __init__(self, image, speed, shell=False):
         super().__init__()
         self.original_image = pygame.image.load(image).convert_alpha()

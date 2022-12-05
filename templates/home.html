@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flappy Patrick Score</title>
+  </head>
+  <body>
+    {% if scores|length > 0 %}
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">Place</th>
+          <th scope="col">ID</th>
+          <th scope="col">Score</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for i in range(0, scores|length) %}
+        <tr>
+          <td scope="col">{{i + 1}}</td>
+          <td scope="col">{{scores[i].id}}</td>
+          <td scope="col">{{scores[i].score}}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    {% endif %}
+  </body>
+</html>

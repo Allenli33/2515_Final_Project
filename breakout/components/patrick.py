@@ -4,6 +4,7 @@ pygame.mixer.init()
 
 class Patrick(pygame.sprite.Sprite):
     def __init__(self):
+        '''loading patrick images'''
         super().__init__()
         patrick_walk_1 = pygame.image.load(
             './images/patrick/patrick_1.png').convert_alpha()
@@ -21,20 +22,23 @@ class Patrick(pygame.sprite.Sprite):
         self.rect = self.image.get_rect(midbottom=(50, 360))
         self.gravity = 0
 
-        # self.jump_sound = pygame.mixer.Sound('./sound/jump.mp3')
-        # self.jump_sound.set_volume(0.5)
+        # pygame.mixer.Music.load('./sound/jump2.mp3')
+        # pygame.mixer.Music.play(1)
 
     def patrick_input(self):
+        '''Adding activities for patrick'''
         keys = pygame.key.get_pressed()
         if keys[pygame.K_SPACE]:
             self.gravity = -5
-            # self.jump_sound.play()
+            # self.sound.play()
 
     def apply_gravity(self):
+        '''set gravity'''
         self.gravity += 0.5
         self.rect.y += self.gravity
 
     def animation_state(self):
+        '''Create animation for patrick'''
         if self.rect.bottom < 360:
             self.image = self.patrick_jump
         if self.rect.bottom >= 400:
@@ -48,6 +52,7 @@ class Patrick(pygame.sprite.Sprite):
             self.image = self.patrick_walk[int(self.patrick_index)]
 
     def update(self):
+        '''keep undating so when it runs keep updating each function'''
         self.patrick_input()
         self.apply_gravity()
         self.animation_state()
